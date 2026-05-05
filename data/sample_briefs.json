@@ -1,0 +1,39 @@
+[
+  {
+    "name": "GlowNest Vitamin C Launch",
+    "product_name": "GlowNest Vitamin C Serum",
+    "key_benefits": "brightening, lightweight hydration, morning-routine glow",
+    "target_audience": "busy professionals in their mid-20s to late-30s",
+    "campaign_objective": "drive clicks to the new product launch page",
+    "platform": "Instagram",
+    "brand_voice": "polished, calm, modern, trustworthy",
+    "required_cta": "Shop now",
+    "banned_claims": "cure acne, miracle, guaranteed results",
+    "extra_context": "launch week, premium but approachable positioning"
+  },
+  {
+    "name": "ClearPatch Finals Week",
+    "product_name": "ClearPatch Overnight Acne Patches",
+    "key_benefits": "targeted spot coverage, easy overnight use, low-effort routine support",
+    "target_audience": "college students during a stressful exam week",
+    "campaign_objective": "increase TikTok engagement and product page visits",
+    "platform": "TikTok",
+    "brand_voice": "playful, fast-paced, relatable",
+    "required_cta": "Tap to shop",
+    "banned_claims": "instant cure, guaranteed clear skin",
+    "extra_context": "content should feel current without sounding forced"
+  },
+  {
+    "name": "SoftShield SPF Mist",
+    "product_name": "SoftShield SPF Mist",
+    "key_benefits": "easy reapplication, lightweight finish, everyday sun protection support",
+    "target_audience": "outdoor commuters and weekend travelers",
+    "campaign_objective": "highlight convenience and build launch awareness",
+    "platform": "Instagram",
+    "brand_voice": "clean, fresh, upbeat",
+    "required_cta": "Learn more",
+    "banned_claims": "full-day guarantee, instant repair",
+    "extra_context": "summer campaign with a practical but elevated tone"
+  }
+]
+

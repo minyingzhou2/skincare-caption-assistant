@@ -1,0 +1,102 @@
+[
+  {
+    "case_id": "case_01_glownest_launch",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "Start your day with GlowNest Vitamin C Serum for brighter-looking skin and lightweight hydration. Shop now.",
+      "GlowNest Vitamin C Serum brings a fresh glow to your morning skincare routine. Tap in and shop now.",
+      "Meet GlowNest Vitamin C Serum, made for busy mornings and a more radiant everyday routine. Shop now."
+    ],
+    "selected_index": 0
+  },
+  {
+    "case_id": "case_02_clearpatch_finals",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "Finals week skin acting up? ClearPatch Overnight Acne Patches keep your routine simple while you sleep. Tap to shop.",
+      "Late nights, early classes, and ClearPatch by your side. Easy overnight spot coverage when you need a low-effort reset. Tap to shop.",
+      "Your overnight study buddy: ClearPatch Overnight Acne Patches for quick routine support during finals week. Tap to shop."
+    ],
+    "selected_index": 1
+  },
+  {
+    "case_id": "case_03_softshield_spf",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "SoftShield SPF Mist makes reapplying sun protection feel simple, light, and easy to carry anywhere. Learn more.",
+      "For commutes, errands, and weekends outside, SoftShield SPF Mist keeps reapplication easy without the heavy feel. Learn more.",
+      "Meet SoftShield SPF Mist: lightweight, practical, and ready for your next sunny day. Learn more."
+    ],
+    "selected_index": 1
+  },
+  {
+    "case_id": "case_04_cloudcalm_moisture",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "CloudCalm Moisture Cream brings comforting hydration to a simple nightly routine for sensitive skin. Discover more.",
+      "When skin feels stressed, CloudCalm Moisture Cream adds a gentle layer of comfort without overcomplicating your routine. Discover more.",
+      "A calmer nighttime routine starts with CloudCalm Moisture Cream and soft, supportive hydration. Discover more."
+    ],
+    "selected_index": 1
+  },
+  {
+    "case_id": "case_05_moonsilk_night",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "MoonSilk Night Cream turns your evening routine into a more luxurious ritual with rich overnight nourishment. Shop now.",
+      "For smoother-feeling skin and a polished nighttime ritual, reach for MoonSilk Night Cream. Shop now.",
+      "MoonSilk Night Cream brings comfort, softness, and an elevated finish to your evening skincare routine. Shop now."
+    ],
+    "selected_index": 0
+  },
+  {
+    "case_id": "case_06_dewdrop_retinol",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "New to retinol? DewDrop Retinol Serum is formulated gently for beginners who want smoother-feeling skin without the guesswork. Shop now.",
+      "DewDrop Retinol Serum makes starting a retinol routine feel simple. Gentle overnight formula, real results you can feel. Shop now.",
+      "Start your retinol journey the right way. DewDrop is designed for first-timers who want smoother skin without irritation. Shop now."
+    ],
+    "selected_index": 0
+  },
+  {
+    "case_id": "case_07_freshmist_toner",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "FreshMist Hydrating Toner Mist gives your routine an instant moisture boost whenever you need it. Grab yours.",
+      "Layer it, spray it, refresh it. FreshMist Toner Mist works with any skincare routine for an on-the-go hydration hit. Grab yours.",
+      "Your skincare routine just got a refresh. FreshMist Hydrating Toner Mist is the step that works with everything. Grab yours."
+    ],
+    "selected_index": 1
+  },
+  {
+    "case_id": "case_08_velveteye_cream",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "Wake up looking refreshed. VelvetEye Brightening Eye Cream gently supports a less puffy, more awake morning look. Shop now.",
+      "VelvetEye Brightening Eye Cream is your morning secret for a softer, more refreshed under-eye. Shop now.",
+      "Start your morning with VelvetEye — a gentle brightening formula that helps your eyes look as rested as you feel. Shop now."
+    ],
+    "selected_index": 2
+  },
+  {
+    "case_id": "case_09_glowave_mask",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "Sunday reset: GloWave Brightening Glow Mask for a weekly glow boost that feels as good as it looks. Tap to shop.",
+      "Make your weekend routine a little more fun. GloWave Brightening Glow Mask delivers an exfoliating glow you can feel. Tap to shop.",
+      "It's mask day. GloWave Brightening Glow Mask brings a bold glow ritual to your weekly self-care lineup. Tap to shop."
+    ],
+    "selected_index": 2
+  },
+  {
+    "case_id": "case_10_softcloud_body",
+    "workflow_note": "Status quo baseline: coordinator writes three drafts and a manager picks one.",
+    "drafts": [
+      "Soft skin, no effort. SoftCloud Nourishing Body Lotion absorbs fast and leaves skin feeling smooth all day. Shop now.",
+      "Make your daily routine feel better. SoftCloud Body Lotion is lightweight, non-greasy, and made for everyday softness. Shop now.",
+      "A little SoftCloud goes a long way. Fast-absorbing body lotion for a simple, enjoyable everyday ritual. Shop now."
+    ],
+    "selected_index": 1
+  }
+]

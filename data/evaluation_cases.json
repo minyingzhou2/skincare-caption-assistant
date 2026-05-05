@@ -1,0 +1,122 @@
+[
+  {
+    "case_id": "case_01_glownest_launch",
+    "product_name": "GlowNest Vitamin C Serum",
+    "key_benefits": "brightening, lightweight hydration, morning-routine glow",
+    "target_audience": "busy professionals in their mid-20s to late-30s",
+    "campaign_objective": "drive clicks to the new product launch page",
+    "platform": "Instagram",
+    "brand_voice": "polished, calm, modern, trustworthy",
+    "required_cta": "Shop now",
+    "banned_claims": "cure acne, miracle, guaranteed results",
+    "extra_context": "launch week, premium but approachable positioning"
+  },
+  {
+    "case_id": "case_02_clearpatch_finals",
+    "product_name": "ClearPatch Overnight Acne Patches",
+    "key_benefits": "targeted spot coverage, easy overnight use, low-effort routine support",
+    "target_audience": "college students during a stressful exam week",
+    "campaign_objective": "increase TikTok engagement and product page visits",
+    "platform": "TikTok",
+    "brand_voice": "playful, fast-paced, relatable",
+    "required_cta": "Tap to shop",
+    "banned_claims": "instant cure, guaranteed clear skin",
+    "extra_context": "content should feel current without sounding forced"
+  },
+  {
+    "case_id": "case_03_softshield_spf",
+    "product_name": "SoftShield SPF Mist",
+    "key_benefits": "easy reapplication, lightweight finish, everyday sun protection support",
+    "target_audience": "outdoor commuters and weekend travelers",
+    "campaign_objective": "highlight convenience and build launch awareness",
+    "platform": "Instagram",
+    "brand_voice": "clean, fresh, upbeat",
+    "required_cta": "Learn more",
+    "banned_claims": "full-day guarantee, instant repair",
+    "extra_context": "summer campaign with a practical but elevated tone"
+  },
+  {
+    "case_id": "case_04_cloudcalm_moisture",
+    "product_name": "CloudCalm Moisture Cream",
+    "key_benefits": "comforting hydration, sensitive-skin support, simple nightly routine",
+    "target_audience": "people with easily irritated skin who want a gentle routine",
+    "campaign_objective": "build trust and encourage first-time trial",
+    "platform": "Instagram",
+    "brand_voice": "gentle, reassuring, minimal",
+    "required_cta": "Discover more",
+    "banned_claims": "heals eczema, guaranteed relief",
+    "extra_context": "the tone should feel calm and supportive"
+  },
+  {
+    "case_id": "case_05_moonsilk_night",
+    "product_name": "MoonSilk Night Cream",
+    "key_benefits": "overnight nourishment, smoother-feeling skin, premium ritual",
+    "target_audience": "women ages 30-45 looking for an elevated evening routine",
+    "campaign_objective": "position the product as a premium skincare staple",
+    "platform": "Instagram",
+    "brand_voice": "luxurious, refined, confident",
+    "required_cta": "Shop now",
+    "banned_claims": "age reversal, miracle results",
+    "extra_context": "emphasize ritual and experience rather than medical outcomes"
+  },
+  {
+    "case_id": "case_06_dewdrop_retinol",
+    "product_name": "DewDrop Retinol Serum",
+    "key_benefits": "smoother texture, gentle overnight formula, suitable for beginners",
+    "target_audience": "adults in their late 20s to 40s starting a retinol routine for the first time",
+    "campaign_objective": "reduce purchase hesitation and drive trial",
+    "platform": "Instagram",
+    "brand_voice": "reassuring, credible, modern",
+    "required_cta": "Shop now",
+    "banned_claims": "removes wrinkles, age reversal, clinically proven, guaranteed",
+    "extra_context": "address common retinol fears, position as beginner-friendly without oversimplifying"
+  },
+  {
+    "case_id": "case_07_freshmist_toner",
+    "product_name": "FreshMist Hydrating Toner Mist",
+    "key_benefits": "instant moisture boost, refreshing on-the-go use, layering-friendly formula",
+    "target_audience": "skincare enthusiasts who use multi-step routines",
+    "campaign_objective": "show how FreshMist fits into any existing skincare routine",
+    "platform": "TikTok",
+    "brand_voice": "energetic, informative, friendly",
+    "required_cta": "Grab yours",
+    "banned_claims": "replaces moisturizer, full hydration guarantee",
+    "extra_context": "highlight versatility and ease of use, short punchy content"
+  },
+  {
+    "case_id": "case_08_velveteye_cream",
+    "product_name": "VelvetEye Brightening Eye Cream",
+    "key_benefits": "reduces look of puffiness, gentle under-eye formula, morning routine boost",
+    "target_audience": "professionals in their 30s who experience tiredness and want a refreshed look",
+    "campaign_objective": "drive awareness and first-time purchase",
+    "platform": "Instagram",
+    "brand_voice": "polished, gentle, aspirational",
+    "required_cta": "Shop now",
+    "banned_claims": "removes dark circles, clinically proven, permanent results",
+    "extra_context": "morning focus — emphasize the bright-eyed effect rather than anti-aging claims"
+  },
+  {
+    "case_id": "case_09_glowave_mask",
+    "product_name": "GloWave Brightening Glow Mask",
+    "key_benefits": "weekly glow boost, exfoliating feel, fun self-care ritual",
+    "target_audience": "gen Z beauty lovers who enjoy weekend skincare routines",
+    "campaign_objective": "drive TikTok engagement and generate shareable content",
+    "platform": "TikTok",
+    "brand_voice": "fun, bold, unapologetic",
+    "required_cta": "Tap to shop",
+    "banned_claims": "instant results, cure, guaranteed glow",
+    "extra_context": "position as a fun weekly ritual rather than a clinical treatment"
+  },
+  {
+    "case_id": "case_10_softcloud_body",
+    "product_name": "SoftCloud Nourishing Body Lotion",
+    "key_benefits": "fast-absorbing, non-greasy, all-day softness support",
+    "target_audience": "adults who want a simple daily body moisturizing routine",
+    "campaign_objective": "build everyday brand presence and encourage repeat purchase",
+    "platform": "Instagram",
+    "brand_voice": "warm, simple, everyday",
+    "required_cta": "Shop now",
+    "banned_claims": "permanent softness, eliminates dryness",
+    "extra_context": "focus on the pleasure of the routine, not dramatic transformation"
+  }
+]
