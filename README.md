@@ -27,7 +27,7 @@ The examples cover tone variety (trendy, premium, emotional) and both target pla
 ### 2. Evaluation design — model-as-judge (`caption_assistant/judge.py`, `evaluate.py`)
 
 A separate Gemini call acts as an independent evaluator. Given the brief and a caption, the judge scores six rubric dimensions (relevance, platform fit, clarity, persuasiveness, brand voice, safety) and returns structured JSON with overall score, strengths, and weaknesses.
-The judge uses `temperature=0.1` to produce consistent, conservative scores and a different, lower-cost model (`gemini-2.0-flash`) than the generator to decouple evaluation from generation.
+The judge uses `temperature=0.1` to produce consistent, conservative scores and a lighter-weight evaluation model (`gemini-2.5-flash-lite`) than the generator to decouple evaluation from generation while keeping judge costs lower.
 `evaluate.py` runs both rule-based and model-as-judge scoring side by side on the full test set, so the comparison against the manual baseline uses two independent signal types.
 
 ---
@@ -98,6 +98,12 @@ A strong caption scores at least 4/5 on relevance and platform fit, includes the
 
 The baseline is the status quo workflow: a coordinator manually writes three drafts from the same brief and a manager picks one. The selected baseline caption is scored through the same rule-based checks and model-as-judge as the app output, so the comparison is apples-to-apples.
 
+### Results summary
+
+In the final live evaluation run, the system was tested on all 10 synthetic skincare briefs using `gemini-2.5-flash` for caption generation and Gemini-based model-as-judge scoring. Under the rule-based framework, the app achieved an average score of **4.11/5**, compared with **4.08/5** for the manual baseline, for a net improvement of **+0.04**. Under the model-as-judge framework, the app achieved an average score of **4.5/5**, compared with **4.4/5** for the baseline, for a net improvement of **+0.1**. All 10 cases completed successfully, and the judge pipeline returned results for every case with **0 judge failures**.
+
+These gains are modest rather than dramatic, which is itself an important finding. The system does not overwhelmingly outperform the human baseline, but it does produce slightly stronger results on average under both evaluation methods. This suggests that the app is useful as a drafting assistant: it can generate consistently structured, platform-appropriate first drafts and slightly improve average output quality, while still requiring human review for final judgment and brand nuance.
+
 ### Where the system fails
 
 - **Generic mock output**: The mock generator uses a fixed template. All mock captions follow the same structure regardless of brand voice, which makes mock-mode evaluation scores less meaningful than live Gemini output.
@@ -112,6 +118,57 @@ The baseline is the status quo workflow: a coordinator manually writes three dra
 - The app does not post or schedule content.
 - No customer data or real business briefs are committed to the repository — all test data is synthetic.
 - API keys are never stored; they live only in the current session environment.
+
+---
+
+## Artifact snapshot
+
+### Interface snapshots
+
+#### 1. Core drafting workflow (mock mode)
+
+This view shows the basic app experience: the user fills out a structured campaign brief, reviews the recommended draft, and inspects rule-based scoring outputs such as relevance, platform fit, CTA detection, and warnings.
+
+![Mock-mode app screenshot](docs/images/mock-mode-screenshot.png)
+
+#### 2. Full live workflow with model-as-judge
+
+This view shows the more advanced evaluation mode used for the final project: live Gemini generation is enabled, latency is displayed, the recommended caption is shown, and the model-as-judge panel returns six rubric scores plus strengths and weaknesses reasoning.
+
+![Live Gemini plus judge screenshot](docs/images/live-judge-screenshot.png)
+
+### Example input
+
+```text
+Product name: GlowNest Vitamin C Serum
+Key benefits: brightening, lightweight hydration, morning-routine glow
+Target audience: busy professionals in their mid-20s to late-30s
+Campaign objective: drive clicks to the new product launch page
+Platform: Instagram
+Brand voice: polished, calm, modern, trustworthy
+Required CTA: Shop now
+Banned claims: cure acne, miracle, guaranteed results
+Extra context: launch week, premium but approachable positioning
+```
+
+### Example recommended output
+
+```text
+Recommended tone: Trendy short-form
+
+Morning routine upgrade: GlowNest Vitamin C Serum. Get that fresh, bright glow
+with lightweight hydration. Shop now.
+```
+
+### What the user sees
+
+In the Streamlit app, the user fills out a structured campaign brief in the left panel and receives three caption options in the right panel. Each option includes rule-based scores, warning flags, CTA detection, and a recommended best draft. In the full live mode, the app also shows latency and an LLM-based evaluation panel with six rubric scores plus strengths and weaknesses reasoning.
+
+### Demo-ready artifact options
+
+For the final submission or presentation, this section can be extended with:
+
+- a short screen recording of one live run through the interface
 
 ---
 
@@ -146,6 +203,6 @@ outputs/
 | Role | Model | Reason |
 |---|---|---|
 | Caption generation | `gemini-2.5-flash` (default) | Best balance of quality, speed, and structured output support |
-| Model-as-judge | `gemini-2.0-flash` | Lower cost for evaluation; judge needs consistency over creativity |
+| Model-as-judge | `gemini-2.5-flash-lite` | Lower-cost judge model with structured output support; judge needs consistency over creativity |
 
 Both models support the `google-genai` SDK's structured output (`response_mime_type="application/json"` + `response_schema`), which enforces the output format without post-processing.

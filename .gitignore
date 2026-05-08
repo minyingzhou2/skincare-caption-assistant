@@ -34,3 +34,5 @@ outputs/live_experiments.csv
 # IDE
 .vscode/
 .idea/
+
+plan/
