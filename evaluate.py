@@ -19,7 +19,7 @@ from pathlib import Path
 
 from caption_assistant.checks import evaluate_caption
 from caption_assistant.generator import generate_captions
-from caption_assistant.judge import judge_caption
+from caption_assistant.judge import DEFAULT_JUDGE_MODEL, judge_caption
 from caption_assistant.models import CaptionOption, JudgeResult, ProductBrief
 from caption_assistant.recommender import evaluate_options
 
@@ -181,6 +181,7 @@ def main():
     total_judge_app = 0.0
     total_judge_baseline = 0.0
     judge_case_count = 0
+    judge_failure_count = 0
 
     start = time.perf_counter()
 
@@ -237,9 +238,11 @@ def main():
         baseline_judge = judge_caption(brief, baseline_caption) if has_api else None
 
         if app_judge is not None and baseline_judge is not None:
-            total_judge_app += app_judge["overall_score"]
-            total_judge_baseline += baseline_judge["overall_score"]
+            total_judge_app += app_judge.overall_score
+            total_judge_baseline += baseline_judge.overall_score
             judge_case_count += 1
+        elif has_api:
+            judge_failure_count += 1
 
         judge_rows.append(
             {
@@ -289,6 +292,13 @@ def main():
             f"Avg delta (app - baseline): "
             f"{round((total_judge_app - total_judge_baseline) / judge_case_count, 2)}"
         )
+    elif has_api:
+        print()
+        print("=== Model-as-judge evaluation ===")
+        print("No judge scores were returned.")
+
+    if has_api:
+        print(f"Judge failures: {judge_failure_count}")
 
     print()
     print(f"Total runtime: {elapsed:.2f}s")

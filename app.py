@@ -7,7 +7,7 @@ from pathlib import Path
 import streamlit as st
 
 from caption_assistant.generator import generate_captions
-from caption_assistant.judge import judge_caption
+from caption_assistant.judge import DEFAULT_JUDGE_MODEL, judge_caption
 from caption_assistant.logging_utils import append_live_experiment
 from caption_assistant.models import ProductBrief
 from caption_assistant.recommender import evaluate_options
@@ -145,7 +145,7 @@ with right:
         # Model-as-judge panel for the recommended caption
         if run_judge:
             with st.spinner("Running model-as-judge evaluation on the recommended draft..."):
-                judge_result = judge_caption(brief, best.option.caption, model="gemini-2.0-flash")
+                judge_result = judge_caption(brief, best.option.caption, model=DEFAULT_JUDGE_MODEL)
             if judge_result is None:
                 st.warning(
                     "Model-as-judge requires a Gemini API key. "

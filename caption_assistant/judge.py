@@ -7,9 +7,20 @@ from __future__ import annotations
 
 import json
 import os
+import sys
+import time
 from typing import Optional
 
 from .models import JudgeResult, ProductBrief
+
+
+DEFAULT_JUDGE_MODEL = "gemini-2.5-flash-lite"
+RETRYABLE_ERROR_MARKERS = [
+    "503",
+    "UNAVAILABLE",
+    "high demand",
+    "temporarily unavailable",
+]
 
 
 JUDGE_SYSTEM_PROMPT = """
@@ -102,15 +113,20 @@ def _load_genai():
         return None, None
 
 
+def _is_retryable_error(exc: Exception) -> bool:
+    message = str(exc)
+    return any(marker.lower() in message.lower() for marker in RETRYABLE_ERROR_MARKERS)
+
+
 def judge_caption(
     brief: ProductBrief,
     caption: str,
-    model: str = "gemini-2.0-flash",
+    model: str = DEFAULT_JUDGE_MODEL,
 ) -> Optional[JudgeResult]:
     """Score a caption using an LLM judge.
 
-    Returns a dict with score fields and reasoning, or None if no API key
-    is configured or the google-genai package is missing.
+    Returns a JudgeResult, or None if no API key is configured, the SDK
+    is missing, or the judge request fails.
     """
     if not (os.getenv("GEMINI_API_KEY") or os.getenv("GOOGLE_API_KEY")):
         return None
@@ -132,16 +148,25 @@ def judge_caption(
 
     try:
         client = genai.Client()
-        response = client.models.generate_content(
-            model=model,
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                system_instruction=JUDGE_SYSTEM_PROMPT,
-                temperature=0.1,
-                response_mime_type="application/json",
-                response_schema=JUDGE_RESPONSE_SCHEMA,
-            ),
-        )
+        retries = 2
+        response = None
+        for attempt in range(retries + 1):
+            try:
+                response = client.models.generate_content(
+                    model=model,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(
+                        system_instruction=JUDGE_SYSTEM_PROMPT,
+                        temperature=0.1,
+                        response_mime_type="application/json",
+                        response_schema=JUDGE_RESPONSE_SCHEMA,
+                    ),
+                )
+                break
+            except Exception as exc:
+                if attempt >= retries or not _is_retryable_error(exc):
+                    raise
+                time.sleep(1.2 * (attempt + 1))
         data = json.loads(response.text or "{}")
         return JudgeResult(
             relevance_score=int(data.get("relevance_score", 3)),
@@ -154,14 +179,18 @@ def judge_caption(
             strengths=data.get("strengths", ""),
             weaknesses=data.get("weaknesses", ""),
         )
-    except Exception:
+    except Exception as exc:
+        print(
+            f"[judge] Model-as-judge failed for model `{model}`: {exc}",
+            file=sys.stderr,
+        )
         return None
 
 
 def judge_captions_batch(
     brief: ProductBrief,
     captions: list[str],
-    model: str = "gemini-2.0-flash",
+    model: str = DEFAULT_JUDGE_MODEL,
 ) -> list[Optional[JudgeResult]]:
     """Score multiple captions for the same brief. Returns one result per caption."""
     return [judge_caption(brief, caption, model=model) for caption in captions]
