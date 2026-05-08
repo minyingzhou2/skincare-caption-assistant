@@ -50,6 +50,16 @@ streamlit run app.py
 
 The app defaults to mock mode and runs without an API key or the `google-genai` package.
 
+### Quick start example
+
+After launching the app, a grader can test one complete example with the following steps:
+
+1. In the sidebar, select **GlowNest Vitamin C Launch** from the example brief dropdown.
+2. Leave **Use mock generator** on for a dependency-light demo, or turn it off and provide a Gemini API key to test live generation.
+3. Click **Generate caption options**.
+4. Review the recommended draft, rule-based scores, and warning checks in the results panel.
+5. Optionally enable **Run model-as-judge on recommendation** to inspect the LLM-based evaluation panel.
+
 ---
 
 ## Sidebar options
